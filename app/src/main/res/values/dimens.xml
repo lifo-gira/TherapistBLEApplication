@@ -1,0 +1,12 @@
+<resources>
+    <!-- Spacing between items in RecyclerView -->
+    <dimen name="recycler_item_space">5dp</dimen>
+    <dimen name="recycler_horizontal_item_space">16dp</dimen>
+    <dimen name="recycler_assigned_patients">6dp</dimen>
+    <dimen name="recycler_item_vertical_spacing">8dp</dimen>
+    <dimen name="recycler_item_horizontal_spacing">20dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- res/values/dimens.xml -->
+    <dimen name="drawer_min_width">80dp</dimen>
+
+</resources>

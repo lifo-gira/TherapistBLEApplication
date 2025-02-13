@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom style for TextInputLayout with outlined box -->
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">#000000</item>  <!-- Set border color to black -->
+        <item name="hintTextColor">@color/black</item>  <!-- Set hint text color -->
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+    </style>
+
+
+    <style name="TransparentActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:height">?android:attr/actionBarSize</item>
+    </style>
+
+    <style name="SwitchTextAppearance">
+        <item name="android:fontFamily">@font/poppinsmedium</item> <!-- Replace with the correct font file name -->
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

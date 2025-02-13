@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- Big tick mark -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_gravity="end"
+        android:layout_marginBottom="8dp" /> <!-- Space below big tick -->
+
+    <!-- Small ticks -->
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_gravity="end"
+        android:layout_marginBottom="4dp" /> <!-- Space between small ticks -->
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_gravity="end"
+        android:layout_marginBottom="4dp" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_gravity="end"
+        android:layout_marginBottom="4dp" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="2dp"
+        android:background="#ffffff"
+        android:layout_gravity="end"
+        android:layout_marginBottom="4dp" />
+
+</LinearLayout>

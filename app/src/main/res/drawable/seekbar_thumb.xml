@@ -1,0 +1,7 @@
+<!-- res/drawable/seekbar_thumb.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#D16564"/> <!-- Thumb color (red) -->
+    <size android:width="8dp" android:height="5dp"/> <!-- Thumb size -->
+    <corners android:radius="30dp"/> <!-- Make the thumb circular -->
+    <stroke android:width="1dp" android:color="#000"/> <!-- White border -->
+</shape>

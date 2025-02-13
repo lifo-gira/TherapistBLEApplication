@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F8F8F8"
+    android:padding="16dp"
+    tools:context=".PainSelection">
+
+    <!-- Top TextView -->
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have any pain?"
+        android:fontFamily="@font/poppinssemibold"
+        android:textSize="18sp"
+        android:textColor="#475467"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="70dp"/> <!-- Space between text and image -->
+
+    <!-- Image -->
+    <ImageView
+        android:id="@+id/yourImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_info_outline_24"
+        android:layout_toEndOf="@id/topText"
+        android:layout_marginEnd="2dp" /> <!-- Space between image and text -->
+
+    <!-- Second TextView -->
+    <TextView
+        android:id="@+id/secondText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="Selection Steps"
+        android:textSize="18sp"
+        android:textColor="#475467"
+        android:layout_toEndOf="@id/yourImage" />
+
+    <!-- LinearLayout to wrap the content with padding -->
+    <LinearLayout
+        android:id="@+id/search_pain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/white_card"
+        android:orientation="vertical">
+
+        <!-- ConstraintLayout with TextInputLayout for Search -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/search_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/selexe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Select Exercises"
+                android:textColorHint="#AFAFBB"
+                app:hintTextColor="@color/black"
+                app:boxBackgroundMode="none"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toEndOf="@id/imageView7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textFilter"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:background="@android:color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!-- LinearLayout for ChipGroup below the search_pain -->
+    <LinearLayout
+        android:id="@+id/chipgrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/search_pain"> <!-- Position below search_pain -->
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" />
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="470dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/human" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/blue_shape"
+        android:fontFamily="@font/poppinsextrabold"
+        android:paddingLeft="30dp"
+        android:paddingRight="15dp"
+        android:text="Submit"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

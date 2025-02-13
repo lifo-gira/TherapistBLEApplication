@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- This TextView will display the item's content -->
+    <LinearLayout
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="249dp"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="3dp"
+                android:backgroundTint="#fff"
+                android:background="@drawable/white_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/detail_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center|top"
+                    android:src="@drawable/wheelchair_annan" />
+
+                <TextView
+                    android:id="@+id/detail_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Muscle Strength Analysis"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/blue_shape"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/status_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:text="Pending"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/blue_shape"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/status_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="22/01/23"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/status_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 9.23 pm"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_indicator"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#E95757"
+                android:translationX="-50dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="4dp" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="27.5dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/assesscard_hanger"
+                android:translationX="-50dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

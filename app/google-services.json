@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "616097971906",
+    "project_id": "therapistbluelock",
+    "storage_bucket": "therapistbluelock.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616097971906:android:752083c17f9386c9aac55b",
+        "android_client_info": {
+          "package_name": "com.example.therapistbluelock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiMusfT-15TePMXr0tzzb195WFaSF6HrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

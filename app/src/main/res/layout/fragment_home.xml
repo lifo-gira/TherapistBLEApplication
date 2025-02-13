@@ -1,0 +1,625 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".HomeFragment">
+
+    <!-- Existing common bar layout -->
+    <LinearLayout
+        android:id="@+id/common_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="60dp">
+
+        <!-- Existing CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#E5E5E5"
+            android:layout_margin="1dp"
+            app:cardCornerRadius="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selepat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search Patients"
+                    android:textColorHint="#AFAFBB"
+                    app:hintTextColor="#A2A3A4"
+                    app:boxBackgroundMode="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/auto_complete"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:inputType="textFilter"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/poppinsextrabold"
+                        android:textColor="#A2A3A4"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:background="#E5E5E5" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/search_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Spacer View to create a gap -->
+        <View
+            android:layout_width="200dp"
+            android:layout_height="match_parent" />
+
+        <!-- Container for right-aligned elements -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/message_icon"
+                android:contentDescription="Image 1"/>
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/notification_icon"
+                android:contentDescription="Image 2"/>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/border_background"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/user_image"
+                    android:contentDescription="User Image"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/profilename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr APM"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- New LinearLayout for side-by-side layouts, fixed below common_bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center">
+
+        <!-- First layout (left side) -->
+        <LinearLayout
+            android:id="@+id/first_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingHorizontal="16dp">
+
+            <!-- Horizontal LinearLayout to display TextViews in a single line -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">  <!-- You can adjust padding as needed -->
+
+                <!-- First LinearLayout (TextViews in horizontal layout) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Good Morning"
+                        android:textSize="16sp"
+                        android:textColor="#000"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Sharon!"
+                        android:textSize="32sp"
+                        android:translationY="-5dp"
+                        android:textStyle="bold"
+                        android:textColor="#005585"/>
+                </LinearLayout>
+
+                <!-- FrameLayout inside the first_layout -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp">
+
+                    <!-- Horizontal LinearLayout inside FrameLayout -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="@drawable/gradient_fullborder"
+                        android:gravity="center_vertical">
+
+                        <!-- First TextViews: Visits for Today and the count -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Patients"
+                            android:textSize="16sp"
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/totalpat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="104"
+                            android:textSize="48sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF" />
+
+                        <!-- Horizontal LinearLayout for two TextViews side by side -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@drawable/white_card"
+                                android:padding="8dp"
+                                android:layout_marginEnd="16dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="Old Patients"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginTop="8dp">
+
+                                    <TextView
+                                        android:id="@+id/oldpat"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="64"
+                                        android:textSize="32sp"
+                                        android:textColor="#000"
+                                        android:layout_marginEnd="8dp"/>
+
+                                    <View
+                                        android:layout_width="50dp"
+                                        android:layout_height="match_parent" />
+
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/old_patients_icon"
+                                        android:contentDescription="Image beside text"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:background="@drawable/white_card"
+                                android:padding="8dp"
+                                android:layout_marginEnd="16dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="New Patients"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginTop="8dp">
+
+                                    <TextView
+                                        android:id="@+id/newpat"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="64"
+                                        android:textSize="32sp"
+                                        android:textColor="#000"
+                                        android:layout_marginEnd="8dp"/>
+
+                                    <View
+                                        android:layout_width="50dp"
+                                        android:layout_height="match_parent" />
+
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:src="@drawable/new_patient_icon"
+                                        android:contentDescription="Image beside text"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+                <ImageView
+                    android:id="@+id/knee_image"
+                    android:layout_width="300dp"
+                    android:layout_height="330dp"
+                    android:src="@drawable/knee_img"
+                    android:layout_gravity="end"
+                    android:translationX="30dp"
+                    android:translationY="-40dp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:translationY="-30dp"
+                android:paddingHorizontal="32dp">
+
+                <!-- Child LinearLayout with two TextViews -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- First TextView on the far left -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patients Assigned"
+                        android:textSize="24sp"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:translationY="-5dp"
+                        android:layout_weight="1" />
+
+                    <!-- Second TextView on the far right -->
+                    <LinearLayout
+                        android:id="@+id/view_all_patient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end">
+
+                        <!-- Second TextView on the far right -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View all"
+                            android:textSize="16sp"
+                            android:textColor="#000"
+                            android:layout_gravity="center_vertical" />
+
+                        <!-- ImageView next to the TextView -->
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/baseline_arrow_forward_ios_24"
+                            android:translationY="3dp"
+                            android:layout_marginStart="8dp"
+                            android:contentDescription="Image next to Text" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- RecyclerView at the bottom -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/patients_assigned"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Second layout (right side) -->
+        <LinearLayout
+            android:id="@+id/second_layout"
+            android:layout_width="450dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/white_card"
+                android:padding="16dp"
+                android:gravity="start"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calendar"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Month"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:layout_marginEnd="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Year"
+                        android:textSize="14sp"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#CFCFCF" />
+
+                <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                    android:id="@+id/compactcalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="10dp"
+                    app:compactCalendarBackgroundColor="@color/white"
+                    app:compactCalendarCurrentDayBackgroundColor="@android:color/transparent"
+                    app:compactCalendarMultiEventIndicatorColor="#fff"
+                    app:compactCalendarTargetHeight="210dp"
+                    app:compactCalendarTextColor="@color/black"
+                    app:compactCalendarTextSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Upcoming"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/view_all_icon"
+                        android:gravity="end" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/calendar_card"
+                    android:layout_marginTop="15dp"
+                    android:padding="8dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/patient_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/user_image" />
+
+                    <!-- LinearLayout to hold name, age, gender in the same line -->
+                    <LinearLayout
+                        android:id="@+id/general_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Patient Name -->
+                        <TextView
+                            android:id="@+id/patient_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Check Up with Patient"
+                            android:textSize="18sp"
+                            android:textColor="#000"
+                            android:layout_marginEnd="16dp" />
+
+                        <!-- Patient Age and Gender in a horizontal layout -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginEnd="16dp">
+
+                            <!-- Patient Age -->
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="8 April, 2021"
+                                android:textColor="#0D0D0D"
+                                android:textSize="14sp"
+                                android:layout_marginEnd="8dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="|"
+                                android:textColor="#0D0D0D"
+                                android:textSize="14sp"
+                                android:layout_marginEnd="8dp" />
+
+                            <!-- Patient Gender -->
+                            <TextView
+                                android:id="@+id/time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 04:00 PM"
+                                android:textColor="#0D0D0D"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+            </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/white_card"
+                android:padding="16dp"
+                android:gravity="start"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:src="@drawable/green_circle"
+                        android:layout_marginTop="7dp"
+                        android:contentDescription="Image description" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TODAY’s LIST"
+                        android:textSize="16sp"
+                        android:textColor="#CFCFCF"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <!-- First TextView on the far left -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Patient"
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <!-- Second TextView on the far right -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end">
+
+                        <!-- ImageView next to the TextView -->
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/baseline_arrow_forward_ios_24"
+                            android:layout_marginStart="8dp"
+                            android:contentDescription="Image next to Text" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!-- Other content of the LinearLayout -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/new_patient_recycle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/light_blue_card"
+    android:id="@+id/newpatcard">
+
+    <!-- Patient Image -->
+    <ImageView
+        android:id="@+id/patient_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/user_image"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Patient Name -->
+    <TextView
+        android:id="@+id/patient_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient Name"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Patient ID -->
+    <TextView
+        android:id="@+id/patient_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: 23456789"
+        android:layout_gravity="center"
+        android:textColor="#475467"
+        android:textSize="14sp" />
+
+</LinearLayout>

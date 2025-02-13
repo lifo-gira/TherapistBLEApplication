@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F8F8F8"
+    android:padding="16dp"
+    tools:context=".CollectionDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/common_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginStart="40dp">
+
+        <!-- Container for right-aligned elements -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/message_icon"
+                android:contentDescription="Image 1"/>
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/notification_icon"
+                android:contentDescription="Image 2"/>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/border_background"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/user_image"
+                    android:contentDescription="User Image"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr APM"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- New Horizontal Layout below the common_bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <!-- First Layout (Left side) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/backnavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_arrow_back_ios_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Collect Details"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black" />
+
+
+
+            <!-- EditText with Image on Left -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="46dp"
+                android:padding="8dp"
+                android:background="@drawable/white_card"
+                android:gravity="center_vertical">
+
+                <!-- Image on Left -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/patient_user" />
+
+                <!-- EditText -->
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Name"
+                    android:textColorHint="#AFAFBB"
+                    android:paddingStart="8dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/white_card" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                android:padding="8dp"
+                android:background="@drawable/white_card"
+                android:gravity="center_vertical">
+
+                <!-- Image on Left -->
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/calendar_image" />
+
+                <!-- EditText -->
+                <EditText
+                    android:id="@+id/dob_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/white_card"
+                    android:drawablePadding="8dp"
+                    android:textColorHint="#AFAFBB"
+                    android:hint="Date of Birth"
+                    android:focusable="false"
+                    android:textColor="@color/black"
+                    android:focusableInTouchMode="false"
+                    android:clickable="true" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="70dp">
+
+                <!-- Male Option -->
+                <LinearLayout
+                    android:id="@+id/maleOption"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/white_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/maleImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/male_icon" />
+
+                    <TextView
+                        android:id="@+id/maleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Male"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Female Option -->
+                <LinearLayout
+                    android:id="@+id/femaleOption"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/femaleImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/female_icon" />
+
+                    <TextView
+                        android:id="@+id/femaleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Female"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Right-End Layout -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:layout_gravity="end|center"
+                    android:layout_marginStart="60dp">
+
+                    <!-- Label -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Report"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppinsmedium" />
+
+                    <!-- EditText -->
+                    <EditText
+                        android:id="@+id/date_of_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edittext"
+                        android:clickable="true"
+                        android:drawableRight="@drawable/calendar_icon_small"
+                        android:drawablePadding="8dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/poppinsextrabold"
+                        android:hint="dd/mm/yyyy"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#AFAFBB"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/firstText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update your sugar and BP levels from your recent report"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppinssemibold"
+                android:textColor="#475467"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp" />
+
+            <TextView
+                android:id="@+id/secondText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your sugar level"
+                android:fontFamily="@font/poppinssemibold"
+                android:textSize="12sp"
+                android:textColor="#475467"
+                android:layout_below="@id/firstText"
+                android:layout_marginTop="16dp" />
+
+            <!-- First custom layout replacing EditText -->
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/secondText"
+                android:layout_marginEnd="26dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@drawable/unselected_option_background"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Less than 140 mg/dl"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:textColor="#475467"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout1"
+                android:layout_marginEnd="26dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@drawable/unselected_option_background"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="140 mg/dl - 199 mg/dl"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:textColor="#475467"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2"
+                android:layout_marginEnd="26dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@drawable/unselected_option_background"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="More than 200 mg/dl"
+                    android:textColor="#475467"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- Second Layout (Right side) -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Height Label -->
+            <TextView
+                android:id="@+id/labelHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:fontFamily="@font/poppinssemibold"
+                android:textSize="24sp"
+                android:textColor="#475467"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="16dp"/>
+
+            <!-- CardView to contain the RecyclerView and pointer -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="150dp"
+                android:layout_height="320dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:layout_marginLeft="16dp"
+                app:cardBackgroundColor="#005585"
+                android:layout_below="@id/labelHeight">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="320dp"
+                    android:padding="5dp"
+                    android:orientation="horizontal">
+
+                    <!-- Pointer (Speech bubble style) -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="2dp"
+                        android:background="@drawable/speech_bubble_background"
+                        android:padding="8dp">
+
+                        <!-- TextView inside the pointer for selected height -->
+                        <TextView
+                            android:id="@+id/txtHeight"
+                            android:layout_width="45dp"
+                            android:layout_height="wrap_content"
+                            android:text="172 cm"
+                            android:fontFamily="@font/poppinsmedium"
+                            android:textColor="#000"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <!-- Arrow pointing towards RecyclerView -->
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/arrow_height_right" />
+
+                    <!-- Vertical Ruler RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/verticalRuler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:overScrollMode="never"
+                        android:paddingTop="100dp"
+                        android:paddingBottom="100dp"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Weight Container aligned to the right of the CardView -->
+
+            <!-- Checkbox and Text -->
+
+            <LinearLayout
+                android:id="@+id/weightContainer"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/cardView"
+                android:layout_alignBottom="@+id/cardView"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="-60dp"
+                android:layout_toEndOf="@id/cardView"
+                android:orientation="vertical">
+
+                <!-- Weight Text -->
+                <TextView
+                    android:id="@+id/labelWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Weight"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:textColor="#475467"
+                    android:textSize="24sp" />
+
+                <!-- LinearLayout for Image, NumberPicker, and Image -->
+                <LinearLayout
+                    android:id="@+id/weightLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Left Image -->
+                    <ImageView
+                        android:id="@+id/imageLeft"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/weight_scale_left" />
+
+                    <!-- NumberPicker -->
+                    <NumberPicker
+                        android:id="@+id/numberPickerWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                    <!-- Right Image -->
+                    <ImageView
+                        android:id="@+id/imageRight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/weight_scale_right" />
+                </LinearLayout>
+
+                <!-- Text saying Kg below NumberPicker -->
+                <TextView
+                    android:id="@+id/textKg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:letterSpacing="0.4"
+                    android:text="KG"
+                    android:textColor="#C7C7C7"
+                    android:textSize="10sp"
+                    android:translationY="-5dp" />
+
+                <!-- New ImageView and TextView above BMI -->
+                <ImageView
+                    android:id="@+id/imageAboveBmi"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/bmi_image_normal" />
+
+                <TextView
+                    android:id="@+id/textAboveBmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="BMI required"
+                    android:textColor="#475467"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="18sp"
+                    android:layout_marginTop="8dp" />
+
+                <!-- BMI TextView -->
+                <TextView
+                    android:id="@+id/textBmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="BMI"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textColor="#475467"
+                    android:textSize="24sp"
+                    android:layout_gravity="center" />
+
+                <!-- BMI Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonBmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bmi_button"
+                    android:text="GET BMI"
+                    android:paddingRight="30dp"
+                    android:paddingLeft="30dp"
+                    android:fontFamily="@font/poppinsextrabold"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/checkboxLayout"
+                android:layout_width="363dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weightContainer"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="60dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/myCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/checkboxText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Any accident / Surgeries happened before"
+                    android:textColor="#475467"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bloodGroupLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/checkboxLayout"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/bloodGroupLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blood Group"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:translationY="10dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:layout_marginEnd="16dp"/>
+
+                <Spinner
+                    android:id="@+id/bloodGroupSpinner"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_edittext"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bloodGroupLayout"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="350dp"
+                android:background="@drawable/blue_shape"
+                android:gravity="center"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="editText1"
+                android:visibility="invisible"/>
+            <!-- Add other elements here as needed -->
+        </RelativeLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

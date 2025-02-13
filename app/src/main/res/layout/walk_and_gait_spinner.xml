@@ -1,0 +1,29 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Cycle 1"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppinssemibold"
+        android:textColor="#000" />
+
+    <!-- Subtitle TextView -->
+    <TextView
+        android:id="@+id/subtitle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.7856 Sec"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:textSize="14sp"
+        android:textColor="#000" />
+</LinearLayout>

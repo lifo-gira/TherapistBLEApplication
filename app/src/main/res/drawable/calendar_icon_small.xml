@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Define the vector path for the calendar icon here -->
+    <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+        android:viewportWidth="20"
+        android:viewportHeight="20"
+        android:width="20dp"
+        android:height="20dp">
+        <path
+            android:pathData="M6.25008 0.833008C6.71032 0.833008 7.08342 1.2061 7.08342 1.66634V2.49967H12.9167V1.66634C12.9167 1.2061 13.2898 0.833008 13.7501 0.833008C14.2103 0.833008 14.5834 1.2061 14.5834 1.66634V2.52025C16.689 2.7293 18.3334 4.50578 18.3334 6.66634V14.1663C18.3334 16.4675 16.4679 18.333 14.1667 18.333H5.83342C3.53223 18.333 1.66675 16.4675 1.66675 14.1663V6.66634C1.66675 4.50578 3.3112 2.7293 5.41675 2.52025V1.66634C5.41675 1.2061 5.78984 0.833008 6.25008 0.833008ZM3.47567 5.83301H16.5245C16.1813 4.86201 15.2553 4.16634 14.1667 4.16634H5.83342C4.7449 4.16634 3.81887 4.86201 3.47567 5.83301ZM16.6667 7.49967H3.33341V14.1663C3.33341 15.5471 4.4527 16.6663 5.83342 16.6663H14.1667C15.5475 16.6663 16.6667 15.5471 16.6667 14.1663V7.49967ZM5.00008 9.99967C5.00008 9.53944 5.37318 9.16634 5.83342 9.16634H14.1667C14.627 9.16634 15.0001 9.53944 15.0001 9.99967C15.0001 10.4599 14.627 10.833 14.1667 10.833H5.83342C5.37318 10.833 5.00008 10.4599 5.00008 9.99967Z"
+            android:fillType="evenOdd"
+            android:fillColor="#475467"
+            android:fillAlpha="0.8" />
+    </vector>
+</vector>

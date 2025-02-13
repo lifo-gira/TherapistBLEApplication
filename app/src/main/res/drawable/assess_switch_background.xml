@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="5dp" /> <!-- Radius to make it oval, adjust as needed -->
+    <solid android:color="#84CEF9" /> <!-- White color for the track -->
+    <size android:width="42dp" android:height="10dp"/> <!-- Adjust size to fit the thumb -->
+</shape>

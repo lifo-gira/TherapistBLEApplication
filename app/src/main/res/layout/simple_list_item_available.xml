@@ -1,0 +1,50 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- ImageView added to the left -->
+    <ImageView
+        android:id="@+id/device_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/iot_device"
+    app:layout_constraintEnd_toStartOf="@id/available_devices_name"
+    app:layout_constraintBottom_toBottomOf="@id/available_devices_name"
+    app:layout_constraintTop_toTopOf="@id/available_devices_name"
+    app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/available_devices_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinssemibold"
+        android:textStyle="bold"
+        android:background="@drawable/device_name_background_bluetooth"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toEndOf="@id/device_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/available_devices_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:clickable="false"
+        android:visibility="gone"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background layer (largest) with a fill color -->
+
+    <!-- New inner circle -->
+    <item
+        android:bottom="50dp"
+        android:left="50dp"
+        android:right="50dp"
+        android:top="50dp">
+        <shape android:shape="oval">
+            <size
+                android:width="200dp"
+                android:height="200dp"/>
+            <solid android:color="#4F8BAF"/> <!-- Slightly darker fill color -->
+            <stroke
+                android:width="2dp"
+                android:color="#ffffff"
+                android:dashWidth="5dp"/>
+        </shape>
+    </item>
+    <!-- Middle layer with a different fill color -->
+    <item
+        android:bottom="75dp"
+        android:left="75dp"
+        android:right="75dp"
+        android:top="75dp">
+        <shape android:shape="oval">
+            <size
+                android:width="175dp"
+                android:height="175dp"/>
+            <solid android:color="#81AED2"/> <!-- Darker fill color -->
+            <stroke
+                android:width="2dp"
+                android:color="#ffffff"/>
+        </shape>
+    </item>
+    <!-- Foreground layer with another fill color -->
+    <item
+        android:bottom="100dp"
+        android:left="100dp"
+        android:right="100dp"
+        android:top="100dp">
+        <shape android:shape="oval">
+            <size
+                android:width="125dp"
+                android:height="125dp"/>
+            <solid android:color="#D2E2EF"/> <!-- Darker fill color -->
+            <stroke
+                android:width="2dp"
+                android:color="#ffffff"/>
+        </shape>
+    </item>
+
+
+</layer-list>

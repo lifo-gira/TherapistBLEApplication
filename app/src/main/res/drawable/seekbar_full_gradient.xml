@@ -1,0 +1,22 @@
+<!-- res/drawable/seekbar_full_gradient.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This will be the background of the SeekBar -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#E0E0E0"/> <!-- Optional background color -->
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+    <!-- This will be the filled progress bar (static gradient) -->
+    <item android:id="@android:id/progress">
+        <shape android:shape="rectangle">
+            <!-- Apply a static gradient that fills the whole SeekBar -->
+            <gradient
+                android:startColor="#B5D4F1"
+            android:centerColor="#81E5DB"
+            android:endColor="#E2798E"
+            android:angle="0"/>         <!-- Horizontal gradient -->
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+</layer-list>

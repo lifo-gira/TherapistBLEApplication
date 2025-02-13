@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/accelerate_decelerate">
+
+    <!-- Scale animation to make the circle shrink -->
+    <scale
+        android:duration="1000"
+        android:fromXScale="2.0"
+        android:fromYScale="2.0"
+        android:toXScale="0.5"
+        android:toYScale="0.5"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fillAfter="true" />
+
+    <!-- Alpha animation to fade the circle in as it shrinks -->
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:fillAfter="true" />
+
+    <!-- Rotate animation -->
+    <rotate
+        android:duration="1000"
+        android:fromDegrees="0"
+        android:toDegrees="360"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fillAfter="true" />
+</set>

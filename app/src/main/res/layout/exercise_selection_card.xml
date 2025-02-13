@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/exercise_card"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        android:backgroundTint="#fff"
+        android:background="@drawable/white_card"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/exercise_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Right-Knee-Bend"
+                android:layout_weight="1"
+                android:textColor="#475467"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppinsbold"/>
+
+            <ImageView
+                android:id="@+id/delete_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/dustbin_icon"/>
+
+            <ImageView
+                android:id="@+id/exercise_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationY="2dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/model_video_icon"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="45dp">
+
+            <!-- First Layout (on the left side) -->
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Your content for the first layout goes here -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <!-- First Layout (on the left side) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <!-- Your content for the first layout goes here -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="REP"
+                            android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppinsextrabold"
+                            android:gravity="center"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#fff"
+                            android:background="@drawable/white_card"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="#FFA7EC"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <NumberPicker
+                                    android:id="@+id/rep_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Add other views here for the first layout -->
+                    </LinearLayout>
+
+                    <!-- Second Layout (on the right side) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <!-- Your content for the second layout goes here -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SET"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/poppinsextrabold"
+                            android:gravity="center"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            android:layout_margin="5dp"
+                            android:backgroundTint="#fff"
+                            android:background="@drawable/white_card"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="#25BFE1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <NumberPicker
+                                    android:id="@+id/set_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Add other views here for the second layout -->
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!-- Add other views here for the first layout -->
+            </LinearLayout>
+
+            <!-- Second Layout (on the right side) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:orientation="vertical">
+                <!-- Your content for the second layout goes here -->
+                <ImageView
+                    android:id="@+id/exercise_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/right_leg_bend"
+                    android:translationY="2dp" />
+
+                <!-- Add other views here for the second layout -->
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

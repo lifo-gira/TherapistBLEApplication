@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MuscleFragment">
+
+    <LinearLayout
+        android:id="@+id/common_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:gravity="end"
+        android:visibility="gone">
+
+        <!-- Container for right-aligned elements -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/message_icon"
+                android:contentDescription="Image 1"/>
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/notification_icon"
+                android:contentDescription="Image 2"/>
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/border_background"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/user_image"
+                    android:contentDescription="User Image"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr APM"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <!-- First TextView -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Patient Name"
+            android:textColor="@color/black"
+            android:textSize="18sp" /> <!-- Add margin to the right for spacing -->
+
+        <!-- Second TextView -->
+        <TextView
+            android:id="@+id/patientname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Andrew"
+            android:textColor="#005585"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:translationY="-13dp"
+        android:orientation="horizontal">
+
+        <!-- First TextView -->
+        <TextView
+            android:id="@+id/patientid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="ID : PAR14AD"
+            android:textColor="#6B6B6B"
+            android:textSize="12sp" /> <!-- Add margin to the right for spacing -->
+
+        <!-- Second TextView -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal">
+
+            <!-- First TextView -->
+            <TextView
+                android:id="@+id/patientage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="35"
+                android:textColor="@color/black"
+                android:textSize="20sp" /> <!-- Add margin to the right for spacing -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text=","
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!-- Second TextView -->
+            <TextView
+                android:id="@+id/patientgender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Male"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:paddingHorizontal="40dp">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/heatmap_image"
+                    android:translationX="-100dp"
+                    android:layout_marginEnd="10dp" />
+
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/transition_text"
+                android:layout_width="213dp"
+                android:layout_height="397dp"
+                android:layout_gravity="center"
+                android:src="@drawable/transition_text_img"
+                android:translationX="84dp"
+                android:translationY="-18dp" />
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Graph"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/black" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/just_a_chart"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginTop="7dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/move_arrow"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/baseline_arrow_back_ios_24" />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/muscle_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@drawable/light_blue_card">
+
+    <ImageView
+        android:id="@+id/patient_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/user_image" />
+
+    <!-- LinearLayout to hold name, age, gender in the same line -->
+    <LinearLayout
+        android:id="@+id/general_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Patient Name -->
+        <TextView
+            android:id="@+id/patient_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginEnd="16dp" />
+
+        <!-- Patient Age and Gender in a horizontal layout -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="16dp">
+
+            <!-- Patient Age -->
+            <TextView
+                android:id="@+id/patient_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35"
+                android:textColor="#000"
+                android:textSize="14sp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Patient Gender -->
+            <TextView
+                android:id="@+id/patient_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="#000"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- LinearLayout to hold Text 1, Text 2 (with background), and Text 3 outside of general_content -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+
+        <!-- Text 1 in the center -->
+        <TextView
+            android:id="@+id/patient_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: 23456789"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <!-- Text 2 in a LinearLayout with a background -->
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/patient_report_card"
+            android:padding="4dp"
+            android:layout_marginEnd="50dp">
+
+            <TextView
+                android:id="@+id/diagno_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left Knee pain"
+                android:textAlignment="center"
+                android:textColor="#2F61C4"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Text 3 on the far right -->
+        <ImageView
+            android:id="@+id/report_icon"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:translationY="-3dp"
+            android:src="@drawable/report_icon" />
+
+
+    </LinearLayout>
+</LinearLayout>

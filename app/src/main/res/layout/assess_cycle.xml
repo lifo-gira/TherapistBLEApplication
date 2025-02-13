@@ -1,0 +1,324 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/transparent"
+    app:cardBackgroundColor="#E4E5FF"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="4dp"
+
+    android:id="@+id/indivicard">
+
+    <LinearLayout
+        android:id="@+id/indivilayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/first_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/first_linear_inner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cycle_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/poppinsextrabold"
+                    android:text="Cycle Count 1"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/range_of_motion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:layout_marginBottom="4dp"
+                    android:text="Range of Motion"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/active_ed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:layout_marginBottom="4dp"
+                    android:text="Active ED"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:layout_marginBottom="4dp"
+                    android:text="Time"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/maximum_rom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppinsregular"
+                    android:layout_marginBottom="4dp"
+                    android:text="Maximum ROM"
+                    android:textColor="#000"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/second_linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cyclerom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/poppinsextrabold"
+                    android:text="103"
+                    android:textStyle="bold"
+                    android:translationY="-8dp"
+                    android:textColor="#000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- First new horizontal LinearLayout for two TextViews -->
+        <LinearLayout
+            android:id="@+id/sit_to_stand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/sittostandtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sit to Stand"
+                android:textColor="#000"
+                android:layout_gravity="start" />  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/sittostandvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:textColor="#000"
+                android:layout_gravity="end" />  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/stand_to_shift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/standtoshifttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stand to Sit"
+                android:textColor="#000"
+                android:layout_gravity="start" />  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/standtoshiftvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:textColor="#000"
+                android:layout_gravity="end" />  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/walk_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/walktext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:text="Walk Time"
+                android:textColor="#000" />  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/walkvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:textColor="#000"
+                android:layout_gravity="end" />  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/steps_covered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColor="#000">
+
+            <TextView
+                android:id="@+id/stepscoveredtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steps Covered"
+                android:layout_gravity="start"
+                android:textColor="#000"/>  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/stepscoveredvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:layout_gravity="end"
+                android:textColor="#000"/>  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ascent_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColor="#000">
+
+            <TextView
+                android:id="@+id/ascenttimetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ascent Time"
+                android:layout_gravity="start"
+                android:textColor="#000"/>  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/ascenttimevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:layout_gravity="end"
+                android:textColor="#000"/>  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/decent_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColor="#000">
+
+            <TextView
+                android:id="@+id/decenttimetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descent Time"
+                android:layout_gravity="start"
+                android:textColor="#000"/>  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/decenttimevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:layout_gravity="end"
+                android:textColor="#000"/>  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/turn_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textColor="#000">
+
+            <TextView
+                android:id="@+id/turntimetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turn Time"
+                android:layout_gravity="start"
+                android:textColor="#000"/>  <!-- Align to start -->
+
+            <!-- Space to push the second TextView to the right -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />  <!-- This will take up all remaining space -->
+
+            <TextView
+                android:id="@+id/turntimevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.78 Sec"
+                android:layout_gravity="end"
+                android:textColor="#000"/>  <!-- Align to end -->
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/support_unsupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/supportvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Without Support"
+                android:textColor="#000"
+                android:textSize="8sp"
+                android:layout_marginTop="16dp"/>  <!-- Adjust margin as needed -->
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

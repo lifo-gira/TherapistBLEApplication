@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F8F8F8"/> <!-- White color -->
+    <corners android:topLeftRadius="10dp"
+        android:bottomLeftRadius="10dp"/> <!-- Apply both left corners -->
+</shape>

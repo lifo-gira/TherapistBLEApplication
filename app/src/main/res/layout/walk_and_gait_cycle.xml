@@ -1,0 +1,511 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/transparent"
+    app:cardBackgroundColor="#E4E5FF"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="4dp"
+    android:id="@+id/indivicard">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/first_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/first_linear_inner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cycle_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/poppinsextrabold"
+                    android:text="Cycle Count 1"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- New horizontal layout for side-by-side views -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <!-- First side-by-side layout -->
+            <LinearLayout
+                android:id="@+id/side_by_side_layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- TextView for Walk Analysis -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Walk Analysis"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:singleLine="true" /> <!-- Ensure single line -->
+
+                <!-- New Horizontal Layout for two TextViews side by side -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Distance"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0.78 Sec"
+                        android:textStyle="bold"
+                        android:gravity="end"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Step Count"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/step_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="738"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Break"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/walk_break"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Active Time"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/active_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0.78 Sec"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:gravity="end"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:visibility="invisible">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Machine Time"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/machine_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0.78 Sec"
+                        android:textColor="#000"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Second side-by-side layout -->
+            <LinearLayout
+                android:id="@+id/side_by_side_layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gait Analysis"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:singleLine="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Stand Time"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/stand_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0.78 Sec"
+                        android:textStyle="bold"
+                        android:gravity="end"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="2dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Swing Time"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Spacer to push Spinner to the far right -->
+                    <Space
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <!-- Spinner aligned to the far right -->
+                    <Spinner
+                        android:id="@+id/swing_time_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_background"
+                        android:gravity="end" />
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="2dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stance Phase"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Spacer to push Spinner to the far right -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <!-- Spinner aligned to the far right -->
+                    <Spinner
+                        android:id="@+id/stance_phase_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:background="@drawable/spinner_background"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="2dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stride Length"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Spacer to push Spinner to the far right -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <!-- Spinner aligned to the far right -->
+                    <Spinner
+                        android:id="@+id/stride_length_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:background="@drawable/spinner_background"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="2dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stride Length %h"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Spacer to push Spinner to the far right -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <!-- Spinner aligned to the far right -->
+                    <Spinner
+                        android:id="@+id/stride_length_percentage_h_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:background="@drawable/spinner_background"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="2dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step Length"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Spacer to push Spinner to the far right -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <!-- Spinner aligned to the far right -->
+                    <Spinner
+                        android:id="@+id/step_length_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:background="@drawable/spinner_background"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mean Velocity"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingEnd="8dp" /> <!-- Add padding between the texts -->
+
+                    <!-- Second TextView -->
+                    <TextView
+                        android:id="@+id/mean_velocity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1.4m/s"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:paddingStart="8dp" /> <!-- Add padding between the texts -->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:paddingVertical="2dp">
+
+                    <!-- First TextView -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cadence"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                    <!-- Spacer to push Spinner to the far right -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <!-- Spinner aligned to the far right -->
+                    <TextView
+                        android:id="@+id/cadence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0 Steps"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:gravity="end"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

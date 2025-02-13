@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#005585"
+        android:centerColor="#58ACDC"
+        android:endColor="#005585"
+        android:angle="0"/> <!-- Gradient direction from left to right -->
+
+    <corners
+        android:topLeftRadius="30dp"
+        android:bottomLeftRadius="30dp" /> <!-- Apply radius only to top-left and bottom-left corners -->
+</shape>

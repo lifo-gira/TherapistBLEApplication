@@ -1,0 +1,404 @@
+<!-- res/layout/custom_dialog_layout.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- LinearLayout for image, text, and icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp">
+
+        <!-- ImageView for the image -->
+        <ImageView
+            android:id="@+id/dialog_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_info_24_yellow" />
+
+        <!-- TextView for the message -->
+        <TextView
+            android:id="@+id/dialog_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Warning"
+            android:textSize="24sp"
+            android:paddingStart="8dp"
+            android:textStyle="bold"
+            android:paddingEnd="8dp" />
+    </LinearLayout>
+
+    <!-- CardView for additional information -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/indivicard"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        app:cardBackgroundColor="#E4E5FF"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Summary"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Test Name"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Left Leg"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView6"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Right Leg"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+            <TextView
+                android:id="@+id/mobilitysummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Mobility Test"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <ImageView
+                android:id="@+id/mobleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/mobilitysummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/mobilitysummtext" />
+
+            <ImageView
+                android:id="@+id/mobrightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/mobilitysummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/mobilitysummtext" />
+
+
+            <TextView
+                android:id="@+id/extensionlagsummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Extension Lag Test"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/mobilitysummtext" />
+
+            <ImageView
+                android:id="@+id/extnleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/extensionlagsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/extensionlagsummtext" />
+
+            <ImageView
+                android:id="@+id/extnrightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/extensionlagsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/extensionlagsummtext" />
+
+
+            <TextView
+                android:id="@+id/dynamicsummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Dynamic Balance\nTest"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/extensionlagsummtext" />
+
+            <ImageView
+                android:id="@+id/dynamicleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/dynamicsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/dynamicsummtext" />
+
+            <ImageView
+                android:id="@+id/dynamicrightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/dynamicsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/dynamicsummtext" />
+
+
+            <TextView
+                android:id="@+id/staticsummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Static Balance\nTest"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/dynamicsummtext" />
+
+            <ImageView
+                android:id="@+id/staticleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/staticsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/staticsummtext" />
+
+            <ImageView
+                android:id="@+id/staticrightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/staticsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/staticsummtext" />
+
+
+            <TextView
+                android:id="@+id/stairsummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Staircase\nClimbing Test"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/staticsummtext" />
+
+            <ImageView
+                android:id="@+id/stairleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/stairsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/stairsummtext" />
+
+            <ImageView
+                android:id="@+id/stairrightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/stairsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/stairsummtext" />
+
+
+            <TextView
+                android:id="@+id/propriosummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Proprioception\nTest"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/stairsummtext" />
+
+            <ImageView
+                android:id="@+id/proprioleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/propriosummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/propriosummtext" />
+
+            <ImageView
+                android:id="@+id/propriorightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/propriosummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/propriosummtext" />
+
+
+            <TextView
+                android:id="@+id/walkgaitsummtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Walk and Gait\nAnalysis"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView4"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/propriosummtext" />
+
+            <ImageView
+                android:id="@+id/walkgaitleftcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/tick"
+                app:layout_constraintBottom_toBottomOf="@+id/walkgaitsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/walkgaitsummtext" />
+
+            <ImageView
+                android:id="@+id/walkgaitrightcheck"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="@+id/walkgaitsummtext"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toTopOf="@+id/walkgaitsummtext" />
+
+            <TextView
+                android:id="@+id/endsumtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppinsbold"
+                android:text="*Are You sure want to Submit*"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/walkgaitsummtext" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Button to dismiss the dialog -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="No" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:padding="16dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/black"
+            android:backgroundTint="#F9B62B" />
+    </LinearLayout>
+
+</LinearLayout>

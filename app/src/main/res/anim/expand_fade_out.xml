@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:interpolator/accelerate_decelerate">
+
+    <!-- Scale animation to make the circle grow -->
+    <scale
+        android:duration="1000"
+        android:fromXScale="0.5"
+        android:fromYScale="0.5"
+        android:toXScale="2.0"
+        android:toYScale="2.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fillAfter="true" />
+
+    <!-- Alpha animation to fade the circle out as it grows -->
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0"
+        android:fillAfter="true" />
+</set>
