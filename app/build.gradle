@@ -6,11 +6,11 @@ plugins {
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    namespace 'com.example.therapistbluelock'
+    namespace 'com.example.therapistble'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.therapistbluelock"
+        applicationId "com.example.therapistble"
         minSdk 24
         targetSdk 34
         versionCode 1
