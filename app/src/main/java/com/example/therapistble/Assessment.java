@@ -1051,6 +1051,7 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
         });
     }
 
+    @SuppressLint("MissingPermission")
     private void setupBluetoothConnections() {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
         String addressesString = sharedPreferences.getString("device_addresses", null);
@@ -1064,55 +1065,19 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
             return;
         }
 
-//        for (int i = 0; i < deviceAddresses.size() && i < 4; i++) {
-//            BluetoothDevice device = bluetoothAdapter.getRemoteDevice(deviceAddresses.get(i));
-//            connectToDevice(device, i);
-//        }
-
         if (deviceAddresses != null && bluetoothAdapter != null) {
             for (int i = 0; i < deviceAddresses.size(); i++) {
                 String address = deviceAddresses.get(i);
                 BluetoothDevice device = bluetoothAdapter.getRemoteDevice(address);
                 Log.e("Device Name",device.getName());
 
-                // Assign each device to its corresponding TextView
-//                if (i == 0) {
-//                    deviceTextViews.put(address, dataTextView);  // First device -> dataTextView
-//                } else if (i == 1) {
-//                    deviceTextViews.put(address, dataTextView1); // Second device -> dataTextView1
-//                }
-
                 connectToDevice(device,i);
             }
         }
     }
 
+    @SuppressLint({"RestrictedApi", "MissingPermission"})
     private void connectToDevice(BluetoothDevice device, int deviceIndex) {
-//        bluetoothDevice = bluetoothAdapter.getRemoteDevice(deviceAddress);
-//
-//        try {
-//            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-//                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.BLUETOOTH_CONNECT}, 1);
-//                return;
-//            }
-//
-//            // Create a BluetoothSocket to connect with the given BluetoothDevice
-//            bluetoothSocket = bluetoothDevice.createRfcommSocketToServiceRecord(uuid);
-//            bluetoothSocket.connect(); // Connect to the device
-//
-//            // If connection is successful, start a thread to listen for incoming data
-//            new Thread(new DataReceiver(bluetoothSocket)).start();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            try {
-//                bluetoothSocket.close(); // Close the socket if there was an error
-//            } catch (IOException closeException) {
-//                closeException.printStackTrace();
-//            }
-//        }
-
-        // Avoid duplicate connections
         if (connectionManager.isDeviceConnected(device)) {
             Log.d("BluetoothConnection", "Device already connected: " + device.getAddress());
             return;
@@ -1121,23 +1086,6 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
         Log.d(TAG, "Connecting to device: " + device.getName() + " - " + device.getAddress());
         @SuppressLint("MissingPermission") BluetoothGatt bluetoothGatt = device.connectGatt(this, false, new CustomGattCallback(device.getAddress(),device.getName(),deviceIndex));
         connectedDevices.put(device.getAddress(), bluetoothGatt);
-
-//        new Thread(() -> {
-//            connectionManager.connect(device);
-//
-//            BluetoothSocket socket = connectionManager.getBluetoothSocket(device);
-//            if (socket != null && socket.isConnected()) {
-//                //TextView targetTextView = getTextViewByIndex(deviceIndex);
-//
-//                // Start DataReceiver with the selected TextView
-//                DataReceiver dataReceiver = new DataReceiver(socket, deviceIndex, uiHandler, this::handleNewData);
-//
-//                new Thread(dataReceiver).start();
-//                Log.d("BluetoothConnection", "Device " + deviceIndex + " connected");
-//            } else {
-//                Log.e("BluetoothConnection", "Failed to connect to device: " + device.getAddress());
-//            }
-//        }).start();
     }
 
     private class CustomGattCallback extends BluetoothGattCallback {
@@ -1165,6 +1113,7 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
             }
         }
 
+        @SuppressLint("RestrictedApi")
         @Override
         public void onServicesDiscovered(BluetoothGatt gatt, int status) {
             super.onServicesDiscovered(gatt, status);
@@ -1180,7 +1129,7 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
             }
         }
 
-        @SuppressLint("MissingPermission")
+        @SuppressLint({"MissingPermission", "RestrictedApi"})
         private void enableNotifications(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             gatt.setCharacteristicNotification(characteristic, true);
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
@@ -1191,6 +1140,7 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
             }
         }
 
+        @SuppressLint("RestrictedApi")
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             super.onCharacteristicChanged(gatt, characteristic);
@@ -1198,115 +1148,76 @@ public class Assessment extends AppCompatActivity implements AssessmentCycleAdap
             if (value != null && value.length > 0) {
                 executorService.execute(() -> {
 //                    int intValue = bytesToInt(value);
-                    String receivedData = (value != null && value.length > 0) ?
-                            new String(value, StandardCharsets.UTF_8) : "No Data";
+                    String lowerCaseName = deviceName.toLowerCase();
+                    if (!lowerCaseName.contains("fsr")) {
+                        String receivedData = (value != null && value.length > 0) ?
+                                new String(value, StandardCharsets.UTF_8) : "No Data";
 
-                    Log.d(TAG, "Received data from " + deviceName + ": " + receivedData);
+                        Log.d(TAG, "Received data from " + deviceName + ": " + receivedData);
 
-                    // Update the corresponding TextView for this device
-                    runOnUiThread(() -> {
-                        handleNewData(index,receivedData);
+                        // Update the corresponding TextView for this device
+                        runOnUiThread(() -> {
+                            handleNewData(deviceName, receivedData);
 //                        TextView targetTextView = deviceTextViews.get(deviceAddress);
 //                        if (targetTextView != null) {
 //                            targetTextView.setText("\n" + deviceAddress +" - "+ receivedData);
 //                        }
-                    });
+                        });
+                    }
                 });
             }
         }
 
-//        private int bytesToInt(byte[] bytes) {
-//            try {
-//                return Integer.parseInt(new String(bytes).trim());
-//            } catch (NumberFormatException e) {
-//                Log.e(TAG, "Failed to convert data for device: " + deviceAddress);
-//                return -1;
-//            }
-//        }
     }
 
-    private void handleNewData(int deviceIndex, String value) {
-        Log.d("Unique name", "Device " + deviceIndex + " connected");
+    private void handleNewData(String deviceName, String value) {
+        Log.d("Device Name", "Data received from device: " + deviceName);
         synchronized (this) {
-//
-            if (deviceIndex == 0) {
+            String lowerCaseName = deviceName.toLowerCase();
+            Log.e("BLE Device name in assessment",lowerCaseName);
+            if (lowerCaseName.contains("left")) {
                 String[] numbers = value.split(" ");
-                Log.e("Parsed numbers", Arrays.toString(numbers));
+                Log.e("Parsed numbers (Left)", Arrays.toString(numbers));
                 float angle = Float.parseFloat(numbers[0]);
-                leftacclx=Double.parseDouble(numbers[1]);
-//                leftaccly=Double.parseDouble(numbers[2]);
-//                leftacclz=Double.parseDouble(numbers[3]);
-//                yaw=Double.parseDouble(numbers[1]);
-//                pitch=Double.parseDouble(numbers[2]);
-//                roll=Double.parseDouble(numbers[3]);
-//                magx=Double.parseDouble(numbers[7]);
-//                magy=Double.parseDouble(numbers[8]);
-//                magz=Double.parseDouble(numbers[9]);
-//                gyrox =Double.parseDouble(numbers[10]);
-//                gyroy =Double.parseDouble(numbers[11]);
-//                gyroz =Double.parseDouble(numbers[12]);
-
-                if(angle>180){
-                    angle= angle-361;
+                leftacclx = Double.parseDouble(numbers[1]);
+                if (angle > 180) {
+                    angle = angle - 361;
                 }
                 device1queue.add(angle);
                 try {
                     accldatax.put(leftacclx);
-//                    accldatay.put(leftaccly);
-//                    accldataz.put(leftacclz);
-//                    magdatax.put(magx);
-//                    magdatay.put(magy);
-//                    magdataz.put(magz);
-//                    gyrodatax.put(gyrox);
-//                    gyrodatay.put(gyroy);
-//                    gyrodataz.put(gyroz);
-//                    rolldata.put(roll);
-//                    yawdata.put(yaw);
-//                    pitchdata.put(pitch);
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
-
                 lefttotalAcceleration = Math.sqrt((leftacclx * leftacclx) + (leftaccly * leftaccly) + (leftacclz * leftacclz));
-            } else if (deviceIndex == 1) {
+                Log.e("Left Acceleration", String.format("%.2f", lefttotalAcceleration));
+            } else if (lowerCaseName.contains("ads")) {
                 String[] numbers = value.split(" ");
-                Log.e("Parsed numbers", Arrays.toString(numbers));
+                Log.e("Parsed numbers (Right)", Arrays.toString(numbers));
                 float angle1 = Float.parseFloat(numbers[0]);
-                if(angle1>180){
-                    angle1= angle-361;
+                rightacclx = Double.parseDouble(numbers[1]);
+                if (angle1 > 180) {
+                    angle1 = angle1 - 361;
                 }
                 device2queue.add(angle1);
-                rightacclx=Double.parseDouble(numbers[1]);
-//                rightaccly=Double.parseDouble(numbers[2]);
-//                rightacclz=Double.parseDouble(numbers[3]);
-//                yaw=Double.parseDouble(numbers[1]);
-//                pitch=Double.parseDouble(numbers[2]);
-//                roll=Double.parseDouble(numbers[3]);
-//                magx=Double.parseDouble(numbers[7]);
-//                magy=Double.parseDouble(numbers[8]);
-//                magz=Double.parseDouble(numbers[9]);
-//                gyrox =Double.parseDouble(numbers[10]);
-//                gyroy =Double.parseDouble(numbers[11]);
-//                gyroz =Double.parseDouble(numbers[12]);
-
                 righttotalAcceleration = Math.sqrt((rightacclx * rightacclx) + (rightaccly * rightaccly) + (rightacclz * rightacclz));
+                Log.e("Right Acceleration", String.format("%.2f", righttotalAcceleration));
             }
 
-
-
-//            Log.e("Acceleration data", "X-axis: " +String.valueOf((int)acclx)+" / Y-axis: " +String.valueOf((int)accly)+" / Z-axis: " +String.format("%.2f", acclz));
-            Log.e("Acceleration data: ", String.format("%.2f", lefttotalAcceleration));
+            // Handle data for device1queue (Left)
             if (!device1queue.isEmpty()) {
                 float dval = device1queue.poll();
-                handleDeviceData(deviceIndex, Math.round(dval));
+                handleDeviceData(0, Math.round(dval));
             }
 
+            // Handle data for device2queue (Right)
             if (!device2queue.isEmpty()) {
                 float dval = device2queue.poll();
-                handleDeviceData(deviceIndex, Math.round(dval));
+                handleDeviceData(1, Math.round(dval));
             }
         }
     }
+
 
     private void handleDeviceData(int deviceIndex, float value) {
 
